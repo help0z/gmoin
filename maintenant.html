@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vérifiez maintenant</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+}
+
+.human-verification {
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+    color: #222;
+}
+
+.human-verification h2 {
+    font-size: 23px;
+    font-weight: 800;
+    color: #12452b;
+    margin: 0 0 10px;
+}
+
+.human-verification p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #626c65;
+    margin: 0 0 20px;
+}
+
+/* Verification checkbox */
+.robot-box {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 15px;
+    background: #fafafa;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.robot-box input {
+    width: 26px;
+    height: 26px;
+    accent-color: #16823c;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.robot-box label {
+    font-size: 16px;
+    color: #252525;
+    cursor: pointer;
+    flex: 1;
+}
+
+.robot-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    color: #6e747b;
+}
+
+/* Continue button */
+.continue-btn {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    background: #087c3f;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.continue-btn:hover:not(:disabled) {
+    background: #05632f;
+}
+
+.continue-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.verification-note {
+    margin-top: 13px !important;
+    font-size: 12px !important;
+    color: #777 !important;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .human-verification {
+        margin: 30px auto;
+    }
+
+    .robot-box {
+        padding: 15px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="human-verification">
+
+    <h2>Vérification humaine</h2>
+
+    <p>
+        Veuillez confirmer que vous êtes une vraie personne
+        pour continuer vers la page suivante.
+    </p>
+
+    <div class="robot-box">
+
+        <input type="checkbox" id="human-checkbox">
+
+        <label for="human-checkbox">
+            Je ne suis pas un robot
+        </label>
+
+        <div class="robot-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32">
+                <path fill="#427bea"
+                    d="M16 2 3 9v14l13 7 13-7V9z"/>
+                <path fill="#f9f9f9"
+                    d="m16 7 8 5v9l-8 5-8-5v-9z"/>
+                <path fill="#65aa58"
+                    d="m12 16 3 3 6-7 2 2-8 9-5-5z"/>
+            </svg>
+            <span>Vérification</span>
+        </div>
+
+    </div>
+
+    <button
+        type="button"
+        id="human-continue"
+        class="continue-btn"
+        disabled>
+        CONTINUER
+    </button>
+
+    <p class="verification-note">
+        Veuillez cocher la case pour continuer.
+    </p>
+
+</div>
+
+<script>
+(function() {
+
+    const checkbox = document.getElementById(
+        'human-checkbox'
+    );
+
+    const button = document.getElementById(
+        'human-continue'
+    );
+
+    checkbox.addEventListener('change', function() {
+        button.disabled = !checkbox.checked;
+    });
+
+    button.addEventListener('click', function() {
+        if (checkbox.checked) {
+            window.location.href = 'https://mitaschool.com/';
+        }
+    });
+
+})();
+</script>
+
+</body>
+</html>
